@@ -1,0 +1,6 @@
+# Timing probe: hold L (opens the item menu) for 30 frames, then release.
+# Used with a TV burst to measure button-to-screen delay in frames.
+fps 60
+3 -
+30 L
+40 -

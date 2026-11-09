@@ -1,0 +1,37 @@
+# Ocarina of Time (Switch 2) super jump, a.k.a. jumpslash cancel / infinite jump.
+# Confirmed on 2026-11-09 with 3, 8, 16, 20 and 32 loops (~1.1 s per loop).
+# Setup: child Link on the ground, Deku Stick on ZR and drawn, Fairy Slingshot
+# directly right of it in the R wheel, no X jump since loading from the title
+# screen. Run with frame mode (the default): see ../SUPERJUMP-RUNBOOK.md.
+#
+# Each loop: R wheel -> Slingshot -> unpause until the stick leaves Link's hand
+# -> R wheel -> Stick -> unpause, triple ZR (mid-air jump attack) -> re-pause.
+# The game resumes ~9-12 frames after R is released, so "unequip" counts frames
+# from the release, not running frames.
+fps 60
+param after_a   6 1 12   # frames from A to opening the wheel (Link airborne)
+param menu_wait 15 8 30  # wheel fully open
+param select    5 3 10   # stick flick to change the highlighted item
+param settle    2 1 6    # stick back to centre, wheel still open
+param unequip   9 1 14   # unpaused frames for the swap-off; 7 was on the edge (worked once, failed once)
+param zr_gap    7 1 14   # frames after the release before the first ZR tap
+param ascent    1 1 14   # frames after the last ZR tap before re-pausing
+3 -
+2 ZL LY+ A
+$after_a ZL LY+
+$menu_wait ZL R
+loop 8
+$select ZL R LX+
+$settle ZL R
+$unequip ZL
+$menu_wait ZL R
+$select ZL R LX-
+$settle ZL R
+$zr_gap ZL
+1 ZL ZR
+1 ZL
+1 ZL ZR
+1 ZL
+1 ZL ZR
+$ascent ZL
+$menu_wait ZL R

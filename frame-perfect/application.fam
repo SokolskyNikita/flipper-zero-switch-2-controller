@@ -1,0 +1,14 @@
+App(
+    appid="frame_perfect",
+    name="Frame Perfect",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="frame_perfect_main",
+    stack_size=4 * 1024,
+    fap_category="USB",
+    fap_version="0.2",
+    fap_description="Wired Switch / Switch 2 controller with frame-timed input sequences and poll-rate testing. Derived from Controller Ducky (Apache-2.0).",
+    requires=["gui", "input", "storage"],
+    fap_libs=["ble_profile"],
+    sources=["frame_perfect.c", "pad_usb.c", "seq.c", "fp_ble.c"],
+    fap_icon="images/icon.png",
+)

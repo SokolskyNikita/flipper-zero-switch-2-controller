@@ -1,0 +1,1 @@
+Upstream https://github.com/eric-m-holub/controller-ducky at d63fbbe (2026-11-05), unmodified. Baseline for ../../frame-perfect (app "Frame Perfect").

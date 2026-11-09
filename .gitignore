@@ -1,0 +1,17 @@
+# local settings, lab notes and raw logs
+private/
+
+# build and editor output
+frame-perfect/dist/
+frame-perfect/.vscode/
+.DS_Store
+__pycache__/
+*.pyc
+
+# runtime files of the Mac tools
+frame-perfect/logs/
+frame-perfect/tools/.fp_*
+frame-perfect/tools/ble-app/FlipperBLETest.app/
+frame-perfect/tools/ble-app/cmd.sh
+frame-perfect/tools/ble-app/last-run.log
+frame-perfect/sequences/superjump_x*.txt

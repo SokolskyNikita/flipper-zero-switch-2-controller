@@ -1,0 +1,8 @@
+Frame Perfect
+Copyright 2026 Frame Perfect contributors
+
+This product includes software derived from Controller Ducky
+(https://github.com/eric-m-holub/controller-ducky, commit d63fbbe),
+licensed under the Apache License, Version 2.0. A pinned, unmodified copy is
+in vendor/controller-ducky/ with its own LICENSE. Changes are noted at the top
+of each derived source file in frame-perfect/.

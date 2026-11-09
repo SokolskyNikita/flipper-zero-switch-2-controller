@@ -1,0 +1,19 @@
+# Timing self-test. Each line is the whole controller state for that many
+# frames (60 fps). The log's "edges" line shows when each state reached
+# the console, in microseconds from the start; compare with the frame
+# counts below (1 frame = 16667 us).
+fps 60
+param gap 3 1 30
+
+# 0 f
+2 -
+# 2 f: A for exactly 1 frame
+1 A
+# 3 f
+$gap -
+# 3 + gap: B for 2 frames
+2 B
+loop 3
+# then 3 cycles of ZR 1 frame / nothing 4 frames
+1 ZR
+4 -
