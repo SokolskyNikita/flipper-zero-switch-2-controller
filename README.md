@@ -1,6 +1,6 @@
 # Frame Perfect: a frame-exact Switch 2 controller on a Flipper Zero
 
-Frame Perfect turns a Flipper Zero into a wired Nintendo Switch / Switch 2 controller that plays input sequences with frame-exact timing, scheduled from a Mac over Bluetooth. First example: the **Ocarina of Time (Switch 2) super jump** (jumpslash cancel), tested with up to 32 consecutive cycles.
+Frame Perfect turns a Flipper Zero into a wired Nintendo Switch / Switch 2 controller that plays input sequences with frame-exact timing, scheduled from a Mac over Bluetooth. First example: the **Ocarina of Time (Switch 2) super jump** (jumpslash cancel), tested with up to 32 consecutive cycles. [Watch it on YouTube](https://www.youtube.com/watch?v=hTiaGGzQzuU).
 
 ## How it works
 

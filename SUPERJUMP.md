@@ -2,6 +2,8 @@
 
 The jumpslash-cancel "infinite jump", done by Frame Perfect. Every number here was found by trial and error against 60 fps TV captures (2026-11-09) and confirmed with 3, 8, 16, 20 and 32 loops. "Running" frames are frames in which the game actually advances, as opposed to frames where the item wheel has it paused.
 
+**Video:** [Super Jump in the Ocarina of Time Remake](https://www.youtube.com/watch?v=hTiaGGzQzuU). Child Link reaches the Shadow Temple entrance from the Kakariko Graveyard (v1.1.1, Switch 2). The first loop is broken down frame by frame, and the end shows a normal jump breaking the trick.
+
 ## Keys (child Link, this remake)
 
 | Key | Does |
