@@ -91,7 +91,7 @@ An app can call the hidden `-[CBCentralManager setDesiredConnectionLatency:forPe
 - **Several apps.** The combined level is the one with the smallest minimum interval, ignoring "opportunistic" requests. Logged as `combinedLatencyForDevice returning …`.
 - **Per-device config.** Applying a profile also stores a per-device config in the LE connection manager, which accessory requests (6) are checked against.
 - **When an app's session ends** ("Unregistering session …"), the combined level is recomputed from the remaining apps and re-applied. With no app left the result is `low`, so the device keeps a `low` config for the rest of the connection. Restorable sessions are kept.
-- **When the device disconnects**, the LE disconnect handler ("LE ConnManager disconnection complete") erases the per-device config. The app's request stays in its session but **isn't re-applied on reconnect**: the connection-complete handler calls `setConnectionLatency` only for iCloud-paired and Find My devices. The level returns only when something recomputes it (the app or another app asks, a session ends, or a session's connection options change). So each connection starts without a config; HIDs get their LEHID profile once the HID mode runs (7.3).
+- **When the device disconnects**, the LE disconnect handler ("LE ConnManager disconnection complete") erases the per-device config. The app's request stays in its session but **isn't re-applied on reconnect**: the connection-complete handler calls `setConnectionLatency` only for iCloud-paired and Find My devices. The level returns only when something recomputes it (the app or another app asks, a session ends or a session's connection options change). So each connection starts without a config; HIDs get their LEHID profile once the HID mode runs (7.3).
 - **Level values can't be changed on retail macOS.** `LeConnectionLatency{Low,Medium,High}{Min,Max}Interval` / `…SupervisionTimeout` keys in a nested `LE` dictionary in `com.apple.MobileBluetooth.debug` would override them, but the loader runs only when `os_variant_has_internal_diagnostics("com.apple.bluetooth")` is true. Observed: the "Override latency" line never appears.
 - **"Requires low latency" is out of reach.** This separate per-device set gives a fixed 15 ms at connect (3). The connect option `RequiresLowLatency` reaches `bluetoothd` from an ordinary app, but the flag isn't set (observed); where it's dropped is unknown.
 
@@ -151,7 +151,7 @@ The only path where third-party accessories reliably get below 30 ms.
 The log line **"Device … does not have \_HID\_SERVICE\_"** means this check failed. It comes from the functions that set or read the Compatible/Incompatible flag (8) and from the "Updating LE HID Device Types" step.
 
 **How a device ends up without the tag.** `bluetoothd` never removes `_HID_DEVICE_` from a live record: its only setter is always called in "add" mode. A device lacks it when:
-- **Its record was replaced or recreated.** A new record stored for a UUID that already has one copies only a few fields (IDS address and a couple of flags), so it starts with **no tags**. Records are also erased when the device cache is full (only records that aren't connected, connecting, LE-paired, classic-paired, an unexpired Find My device, or a fast-LE-connection device are evicted: "Device … evicted"), or when a device is deleted or unpaired. The new record gets the tag only after GATT discovery finds the HID service again.
+- **Its record was replaced or recreated.** A new record stored for a UUID that already has one copies only a few fields (IDS address and a couple of flags), so it starts with **no tags**. Records are also erased when the device cache is full (only records that aren't connected, connecting, LE-paired, classic-paired, an unexpired Find My device or a fast-LE-connection device are evicted: "Device … evicted"), or when a device is deleted or unpaired. The new record gets the tag only after GATT discovery finds the HID service again.
 - **A privileged client removed it.** The entitlement-checked XPC calls `_xpcCBDiscoveryDeviceUntag:` and `_xpcCBDiscoveryDeviceRemoveAllTags:`, and CoreBluetooth sessions with a tagging capability flag, can remove any tag. Which entitlement grants that session flag is unknown.
 - **GATT discovery hasn't finished** on a new connection.
 
@@ -177,16 +177,18 @@ numberOfAppleMSOrTP, numberOfAppleKB, numberOfNon15msMitiForMSTP
 ```
 
 **Inputs:**
-- **is15msSupportedByController:** chip generation 20–1999, 3000–3999 or 5000–5999.
-- **is15msDefault:** feature flag `ELLAudioWith15msHIDs` or `Use15msSniffIntervalForModernAppleHIDs`, or preference `moveAllAppleHIDsTo15` in `com.apple.bluetooth`.
-- **isMove3PPLEMStoLegacyMode:** the `move3PPLEMSToLegacyMode` preference.
-- **isGamingConsoleMode:** macOS Game Mode, from the `com.apple.system.console_mode_changed` notification.
-- **numIncompatibleHID:** old Apple HIDs, plus **classic (BR/EDR) HIDs that aren't modern Apple HIDs or game controllers, once they enter sniff mode at an interval other than 15 ms**. The sniff callback logs "classic device … is not using 15ms sniff interval" and sets the flag, cleared on disconnect. Classic game controllers are put on 15 ms sniff and don't count. So a typical third-party classic keyboard or mouse moves every LE HID to 11.25 ms.
+| Input | Meaning |
+| --- | --- |
+| `is15msSupportedByController` | chip generation 20–1999, 3000–3999 or 5000–5999. |
+| `is15msDefault` | feature flag `ELLAudioWith15msHIDs` or `Use15msSniffIntervalForModernAppleHIDs`, or preference `moveAllAppleHIDsTo15` in `com.apple.bluetooth`. |
+| `isMove3PPLEMStoLegacyMode` | the `move3PPLEMSToLegacyMode` preference. |
+| `isGamingConsoleMode` | macOS Game Mode, from the `com.apple.system.console_mode_changed` notification. |
+| `numIncompatibleHID` | old Apple HIDs, plus **classic (BR/EDR) HIDs that aren't modern Apple HIDs or game controllers, once they enter sniff mode at an interval other than 15 ms**. The sniff callback logs "classic device … is not using 15ms sniff interval" and sets the flag, cleared on disconnect. Classic game controllers are put on 15 ms sniff and don't count. So a typical third-party classic keyboard or mouse moves every LE HID to 11.25 ms. |
 
 **The choice:**
 1. Start with `11_25_MS_ALL` if anything is incompatible, otherwise `DEFAULTS`.
 2. **15 ms default on:** anything incompatible → `11_25_MS_ALL`, done; otherwise → `15_MS_ALL`, then step 4.
-3. **15 ms default off, no Apple HID connected:** if an LE HID is connected, 15 ms is supported, nothing is incompatible, and a stereo SCO call or an LE Audio device is active → `15_MS_ALL`; otherwise keep step 1's mode. If 15 ms isn't supported, done; otherwise step 4.
+3. **15 ms default off, no Apple HID connected:** if an LE HID is connected, 15 ms is supported, nothing is incompatible and a stereo SCO call or an LE Audio device is active → `15_MS_ALL`; otherwise keep step 1's mode. If 15 ms isn't supported, done; otherwise step 4.
 4. **Game Mode:** Game Mode on, 15 ms supported, nothing incompatible and **exactly one** game controller connected → `DEFAULTS` becomes `DEFAULTS_LL`, `15_MS_ALL` becomes `15_MS_ALL_LL`.
 
 With Apple HIDs connected, further branches (not detailed) can force `11_25_MS_ALL` or `15_MS_ALL` depending on the Apple mouse/trackpad/keyboard mix and 15 ms support. `11_25_MS_ALL_LL` is in the name table but never chosen.

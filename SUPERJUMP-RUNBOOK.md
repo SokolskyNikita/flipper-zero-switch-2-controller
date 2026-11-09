@@ -1,13 +1,15 @@
 # Super jump runbook (Ocarina of Time, Switch 2)
 
-How to run the Flipper-driven super jump and recover when something breaks. The inputs and why they work: [SUPERJUMP.md](SUPERJUMP.md).
+How to run the Flipper-driven super jump and recover when something breaks. The inputs and why they work: [SUPERJUMP.md](SUPERJUMP.md). Run every command below from `frame-perfect/` (`cd frame-perfect`).
 
 ## The pieces
 
-- **Flipper:** on the Switch dock's USB, running Frame Perfect in **Remote mode**. It's the Switch's Pro Controller, and it takes commands over Bluetooth as **"FP <flipper name>"** (15 ms link, peripheral latency off).
-- **Mac:** `tools/fp_remote.py serve` holds the Bluetooth link. It pings the Flipper's clock, reads the HDMI frame grid from the TV and sends it to the Flipper every 0.5 s. Other `fp_remote.py` commands talk to it. Its log is `logs/remote-*.jsonl`.
-- **TV:** read-only. `serve` keeps a private tracefs instance `fp` (IRQ 134) on it while running. A capture tool on the TV (`tv_capture_dir` in `private/config.json`; PicCap's `hyperion-webos` plus our `burst` receiver) records frames for checking attempts.
-- **Switch:** System Settings → TV Output → **VRR Output Off**. With VRR on, frames stretch unpredictably.
+| Part | Role |
+| --- | --- |
+| Flipper | On the Switch dock's USB, running Frame Perfect in **Remote mode**: the Switch's Pro Controller, taking commands over Bluetooth as **"FP <flipper name>"** (15 ms link, peripheral latency off). |
+| Mac | `tools/fp_remote.py serve` holds the Bluetooth link, pings the Flipper's clock, reads the HDMI frame grid from the TV and sends it to the Flipper every 0.5 s. Other `fp_remote.py` commands talk to it. Log: `logs/remote-*.jsonl`. |
+| TV | Read-only. `serve` keeps a private tracefs instance `fp` (IRQ 134) on it while running. A capture tool on the TV (`tv_capture_dir` in `private/config.json`; PicCap's `hyperion-webos` plus our `burst` receiver) records frames for checking attempts. |
+| Switch | System Settings → TV Output → **VRR Output Off**. With VRR on, frames stretch unpredictably. |
 
 ## Before each jump
 
@@ -25,7 +27,6 @@ How to run the Flipper-driven super jump and recover when something breaks. The 
 ## Run it
 
 ```bash
-cd frame-perfect
 python3 tools/fp_remote.py superjump --loops 16          # ~18 s; --claim to take control first
 ```
 

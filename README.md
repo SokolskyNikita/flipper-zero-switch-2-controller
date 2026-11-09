@@ -2,8 +2,6 @@
 
 Frame Perfect turns a Flipper Zero into a wired Nintendo Switch / Switch 2 controller that plays input sequences with frame-exact timing, scheduled from a Mac over Bluetooth. First example: the **Ocarina of Time (Switch 2) super jump** (jumpslash cancel), tested with up to 32 consecutive cycles.
 
-> Demo video: _coming soon_
-
 ## How it works
 
 ```
@@ -25,7 +23,7 @@ LG TV (HDMI frame interrupts) ──ssh──► Mac ──Bluetooth (15 ms)─�
 - **Console polling:** the Switch 2 reads a wired controller every 8.000 ms, whatever interval the controller asks for.
 - **VRR must be off** (System Settings → TV Output → VRR Output). With VRR on, gameplay frames stretch by up to 7 ms at unpredictable times. With VRR off, every frame is 16,667.0 µs (sd 1.5 µs over 5,400 frames), and a frame grid refreshed every 0.5 s predicts every frame start to within 14 µs.
 - **Input to screen:** pressing L opens the item menu 3–4 frames after the frame in which the console read it. The game picks up input about 2–5 ms after each HDMI frame start, with a few ms of jitter, so presses early in a frame are a toss-up between two frames. Presses reaching the console 6–14 ms into a frame reacted on the same frame 6 of 6 times in frame mode and 10 of 12 across the timing sweeps (the other two were a frame late, console-side). Frame mode aims every change there.
-- **Game-specific timings** (item wheel, swap-off, ZR): see [frame-perfect/SUPERJUMP.md](frame-perfect/SUPERJUMP.md).
+- **Game-specific timings** (item wheel, swap-off, ZR): see [SUPERJUMP.md](SUPERJUMP.md).
 - **Bluetooth on macOS:** an ordinary BLE accessory gets a 30 ms connection. An accessory with an HID service gets 15 ms, but with peripheral latency 22, which lets the Flipper sleep for up to 330 ms. Frame Perfect adds an HID service, and on the firmware build it was developed on it also turns peripheral latency off: Mac→Flipper median 11 ms, p99 31 ms. How macOS chooses these: [docs/macos-ble-latency.md](docs/macos-ble-latency.md).
 
 ## Requirements
@@ -37,15 +35,15 @@ LG TV (HDMI frame interrupts) ──ssh──► Mac ──Bluetooth (15 ms)─�
 
 ### Without a rooted TV
 
-`fp_remote.py serve --fake-grid` sends a fixed 60 Hz grid, which is correct in rate with VRR off but has an unknown phase. Sequences then run with time-based rather than frame-aligned timing, so individual inputs land a frame early or late more often, and attempts need retries. Finding the phase without a TV, for example from a phone video of a known input, is an open item.
+`fp_remote.py serve --fake-grid` sends a fixed 60 Hz grid, which is correct in rate with VRR off but has an unknown phase. Sequences then run on time alone, so individual inputs land a frame early or late more often and attempts need retries. Finding the phase without a TV, for example from a phone video of a known input, is an open item.
 
 ## Quick start (super jump)
 
-The exact keys, timings and sequence are in [frame-perfect/SUPERJUMP.md](frame-perfect/SUPERJUMP.md).
+The exact keys, timings and sequence are in [SUPERJUMP.md](SUPERJUMP.md).
 
 1. Build and copy the app ([frame-perfect/README.md](frame-perfect/README.md)), then build the Bluetooth helper: `frame-perfect/tools/ble-app/build.sh`.
 2. Put your settings in `private/config.json` (see `frame-perfect/tools/fp_config.py`).
-3. Follow [frame-perfect/SUPERJUMP-RUNBOOK.md](frame-perfect/SUPERJUMP-RUNBOOK.md): start Remote mode, run `serve`, calibrate the clock over USB once, move the Flipper to the dock, then:
+3. Follow [SUPERJUMP-RUNBOOK.md](SUPERJUMP-RUNBOOK.md): start Remote mode, run `serve`, calibrate the clock over USB once, move the Flipper to the dock, then:
 
 ```bash
 python3 frame-perfect/tools/fp_remote.py superjump --loops 32 --claim
@@ -55,10 +53,10 @@ python3 frame-perfect/tools/fp_remote.py superjump --loops 32 --claim
 
 | Path | What |
 | --- | --- |
-| `frame-perfect/` | the Flipper app (C), sequences, super jump guide and runbook |
+| `SUPERJUMP.md`, `SUPERJUMP-RUNBOOK.md` | the super jump: exact inputs, and how to run it |
+| `frame-perfect/` | the Flipper app (C) and sequences |
 | `frame-perfect/tools/` | Mac tools: `fp_remote.py` (server + commands), `ble_rpc.py` (upload builds over Bluetooth), `attempt.py`, `phase_sweep.py`, `check_timing.py`, `host_test.py` |
 | `docs/` | how macOS picks Bluetooth LE connection intervals (reverse-engineered from `bluetoothd`) |
-| `vendor/controller-ducky/` | pinned upstream copy this app started from |
 | `private/` | git-ignored: local settings, lab notes, raw logs |
 
 ## Credits

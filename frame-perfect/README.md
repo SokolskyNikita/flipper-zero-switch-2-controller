@@ -1,6 +1,6 @@
 # Frame Perfect (Flipper Zero app)
 
-A wired Switch / Switch 2 controller for frame-exact input sequences. Derived from [Controller Ducky](https://github.com/eric-m-holub/controller-ducky) (Apache-2.0, commit `d63fbbe`, pinned in `../vendor/controller-ducky/`): the Pro Controller handshake, subcommand replies, fake SPI flash and report layout come from there. Changes are noted at the top of each source file.
+A wired Switch / Switch 2 controller for frame-exact input sequences. Derived from [Controller Ducky](https://github.com/eric-m-holub/controller-ducky) (Apache-2.0, commit `d63fbbe`): the Pro Controller handshake, subcommand replies, fake SPI flash and report layout come from there. Changes are noted at the top of each source file.
 
 On the Flipper: Apps → USB → **Frame Perfect** (`/ext/apps/USB/frame_perfect.fap`). Data in `/ext/apps_data/frame_perfect/`: `settings.txt`, `log.txt`, `sequences/`.
 
@@ -19,7 +19,7 @@ If nothing connects, it says what to check and offers a retry. If no setting mov
 **Manual test**
 
 - Starts from the saved recommendation. With none, it uses the defaults: Pro Controller, 8 ms (what a real Pro Controller does). The screen says which.
-- Change Mode and Poll interval, Connect, or reset to the recommendation.
+- Change Mode and Poll interval, Connect or reset to the recommendation.
 - Once connected:
   - **Game check (2 questions).** Tells you to open the game's pause menu with your own controller, moves its cursor, then asks whether it moved and whether your own controller still works.
   - **Live control.** Four layouts on the Flipper's keys. Hold OK for the next layout, hold Back to leave.
@@ -36,7 +36,7 @@ If nothing connects, it says what to check and offers a retry. If no setting mov
 - when streaming started and how long the handshake took
 - the first 120 raw packets from the console, in hex (Pro rumble-only packets are counted, not logged), and a summary of handshake commands and subcommands
 - poll statistics: every second during runs and sweeps, every 10 s while connected (rate, mean/min/max interval, 0.5 ms histogram)
-- each sweep step's result, every input-check result, and the recommendation
+- each sweep step's result, every input-check result and the recommendation
 - live button changes
 - each sequence run: start (parameters, cycle length), end (cycles done, stopped or finished), and the exact time of every state change (first 64)
 
@@ -55,22 +55,15 @@ loop 20                # the steps below repeat 20 times (0 = until stopped)
 
 Inputs: `A B X Y L R ZL ZR PLUS MINUS HOME CAPTURE LS RS UP DOWN LEFT RIGHT`, sticks `LX+ LX- LY+ LY- RX+ RX- RY+ RY-` (full tilt). Each line is the complete state; anything not listed is released. `#` starts a comment.
 
-- `sequences/oot_superjump.txt`: Ocarina of Time (Switch 2) super jump. See [SUPERJUMP.md](SUPERJUMP.md).
+- `sequences/oot_superjump.txt`: Ocarina of Time (Switch 2) super jump. See [SUPERJUMP.md](../SUPERJUMP.md).
 - `sequences/lmenu_test.txt`: timing probe (L held 30 frames opens the item menu), used by `tools/check_timing.py` and `tools/phase_sweep.py`.
 - `sequences/tap_test.txt`: timing self-test.
 
 ## Remote mode (driven from a Mac over Bluetooth)
 
-`loader open /ext/apps/USB/frame_perfect.fap remote` (or `tools/ble_rpc.py start ... remote`) starts Remote mode. The Flipper runs its own Bluetooth profile, "FP <name>", with an HID service so macOS gives it a 15 ms connection. `tools/fp_remote.py` on the Mac controls:
+`loader open /ext/apps/USB/frame_perfect.fap remote` (or `tools/ble_rpc.py start ... remote`) starts Remote mode. The Flipper runs its own Bluetooth profile, "FP <name>", with an HID service so macOS gives it a 15 ms connection. `tools/fp_remote.py` on the Mac sends the frame grid (the period plus one frame start, on the Flipper's clock) and loads, writes and lists sequence files and sets their parameters. Its `go` starts a sequence at a set time; in frame mode every input change reaches the console 6–14 ms into its frame. It can also hold buttons and sticks, switch the USB controller on or off and read the status, the edge log and the end of the app log. It can quit the app too, so a new build can be uploaded over Bluetooth.
 
-- **Frame grid:** period plus one frame start, on the Flipper's clock.
-- **Sequences:** load, set parameters, write and list files.
-- **Scheduled start:** `go` at a time T, in frame mode. Every input change reaches the console 6–14 ms into its frame.
-- **Holds:** buttons and sticks.
-- **USB identity:** on or off.
-- **Status and logs:** status, edge log, log tail, and quit, so builds can be updated over Bluetooth.
-
-The protocol is documented at the top of the Remote mode section in `frame_perfect.c`; the workflow is in [SUPERJUMP-RUNBOOK.md](SUPERJUMP-RUNBOOK.md).
+The protocol is documented at the top of the Remote mode section in `frame_perfect.c`; the workflow is in [SUPERJUMP-RUNBOOK.md](../SUPERJUMP-RUNBOOK.md).
 
 ## How the timing works
 
@@ -108,11 +101,9 @@ Sequences go to `/ext/apps_data/frame_perfect/sequences/` the same way; `receive
 
 `tools/flipper_cli.py` sends one CLI command; `tools/host_test.py` plays the console (Pro handshake, then timestamps each button change). Headless arguments:
 
-| Arguments | Does |
-| --- | --- |
-| `auto mode=pro\|hori int=N seq=FILE runs=N quit=SECONDS` | connect, run a sequence, quit |
-| `autotest quit` | sweep only, save the best setting unconfirmed, quit |
-| `autotest answer=y\|n quit` | the full guided automatic test, answering its questions automatically (test only) |
+- `auto mode=pro|hori int=N seq=FILE runs=N quit=SECONDS` connects, runs a sequence and quits.
+- `autotest quit` runs the sweep only, saves the best setting unconfirmed and quits.
+- `autotest answer=y|n quit` runs the full guided automatic test and answers its questions automatically (for testing).
 
 ```bash
 python3 tools/flipper_cli.py 'loader open /ext/apps/USB/frame_perfect.fap auto mode=pro int=1 seq=tap_test.txt runs=2 quit=20' --no-wait
