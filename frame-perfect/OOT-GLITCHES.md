@@ -2,7 +2,7 @@
 
 A list of the glitches known in the 2026 Ocarina of Time remake as of 16 November 2026, with a verdict on each: would a scripted, frame-exact controller help?
 
-- **Sources:** the Ocarina of Time 2026 speedrunning Discord (glitch-hunting channel, the routing forum and the per-glitch video threads), YouTube videos and run commentary.
+- **Sources:** the Ocarina of Time 2026 speedrunning Discord (glitch-hunting channel, the routing forum and the per-glitch video threads), the ZSR wiki, StratDB, YouTube videos and run commentary. Links are in [Sources](#sources).
 - **Dates** are UTC and are a best guess: usually the day the first clip or thread was posted.
 - **Credits** use the names people post under. Where a thread or video names a finder, that is what is listed.
 - **"Works on"** comes from version tags and reports in those threads. "Not stated" means nobody said.
@@ -20,7 +20,7 @@ Sorted by discovery date.
 | 5 Nov | Boss quick kills | Fewer cycles on bosses with sticks, Din's Fire, hammer cancels | bradyONE and others | low | not stated |
 | 5 Nov | Hitstop launches | Landing a hit at the right moment flings Link; explained 16 Nov | first clip by RoyArashi; explained by RoboRotembo | none yet | not stated |
 | 6 Nov | Actor jump | Huge jump off a chest, grave, box or bean plant | Vidya James (bean jump); Ataappi (general form) | high | 1.0 + 1.1.1 |
-| 6 Nov | Puberty skip | Beating an adult dungeon as a child turns Link adult | not clear; write-up by tvbrayden, press credits ZFG | high | 1.0 + 1.1.1 |
+| 6 Nov | Puberty skip | Beating an adult dungeon as a child turns Link adult | oussama and tvbrayden | high | 1.0 + 1.1.1 |
 | 7 Nov | Deku Tree B1 skip | Reach the basement ledge early | Ataappi | low | 1.0 + 1.1.1 |
 | 7 Nov | Hookshot extension | Fire a projectile from an offset camera position | LegendofLuke | none | not stated |
 | 7 Nov | Hover Boots bottle extension | Bottle swings reset the hover timer | Quib | low | not stated |
@@ -36,7 +36,7 @@ Sorted by discovery date.
 | 9 Nov | Save/load respawn manipulation | Saving out of bounds reloads Link somewhere else | wxyz, GlitchesAndStuff, Poodleskirt | high | 1.0 + 1.1.1 |
 | 10 Nov | Forest Escape | Leave Kokiri Forest before the Deku Tree | Ataappi | none | 1.0 + 1.1.1 |
 | 10 Nov | Ocarina push and dive | Link can be pushed, even through void planes, while playing | panchosteve | none | 1.0 + 1.1.1 |
-| 10 Nov | Deku Tree as adult | Adult Link returns to child with adult equipment | tvbrayden; equipment trick by Windocks | none | not stated |
+| 10 Nov | Reverse Puberty Adventure | The Deku Tree's blue warp turns adult Link back into a child | tvbrayden; equipment trick by Windocks | none | not stated |
 | 11 Nov | Boss key skips | Clip into the Forest, Fire, Spirit and Shadow boss rooms | Dusty_Carpet, Ultraspeed7, NathanLoto, Zas, GlitchesAndStuff | mid | 1.0 only |
 | 11 Nov | Geddan boost | A bomb launches child Link if he holds the Biggoron Sword at low health | CaspianFS | none | not stated |
 | 11 Nov | Gold Skulltula respawn | A collected token comes back after a reload | Ninpalk (thread); an N64 holdover | none | not stated |
@@ -46,13 +46,13 @@ Sorted by discovery date.
 | 11 Nov | Fishing rod steal | Keep the fishing rod after leaving the pond | DobleC, from a post by tobiuo0905 | none | 1.1.1 (tested), 1.0 not stated |
 | 12 Nov | Bomb T-pose | A glitched bomb pull clips Link into corners | Pasty | high | 1.0 + 1.1.1 |
 | 12 Nov | Song of Time skip | Pass the Forest Temple time block without the song | Ultraspeed7 (spot), Pasty (T-pose), ontrigger (first clip) | high | 1.0 + 1.1.1 |
+| 12 Nov | Castle guard shot | A slingshot hit stuns a Hyrule Castle guard | not known | low | not stated |
 | 12 Nov | Heat invulnerability | No heat timer in Death Mountain Crater | Olra | none | 1.1.1 (tag), 1.0 not stated |
 | 13 Nov | No Slip Condition | Change direction on ice with no speed loss | Splarff | none | not stated |
 | 14 Nov | Collapse Longshot skip | Cross the tower-collapse gap without the Longshot | dannyb, RoboRotembo and HenglesZ; research by zfg | high | 1.0 + 1.1.1 |
 | 14 Nov | Iron Boots skip (Invalid Respawn) | Respawn inside the Forest Temple bow room | Ultraspeed7; bomb lineup by DrDiabeteus; setup by sva | high | 1.0 + 1.1.1 |
 | 14 Nov | Yiga Warp | Load a save at coordinates carried over from the escape | Ymuy | none (NG+ only) | 1.0 + 1.1.1 |
 | 15 Nov | Temple of Time door skip | Get past the Door of Time from above | Truman | none | 1.1.1 (tag), 1.0 not stated |
-| 15 Nov | Slingshot on castle guards | The slingshot stuns Hyrule Castle guards | not known | low | not stated |
 | 15 Nov | Enemy AI disable | Insta-rolling in a Water Temple room freezes enemies | Kædesakz | none | 1.0 (tag), 1.1.1 not stated |
 
 ## What Frame Perfect can and cannot do
@@ -84,9 +84,9 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Also known as:** JSC, IJSC (infinite jumpslash cancel), IJS, infinite jump, infinite height glitch, super jump, sword jump, Deku Stick jump, hammer hover, hovering.
 - **What it does:** each jump slash gives upward speed. Putting the weapon away and re-drawing it in mid-air allows another jump slash before Link lands, so the chain climbs for as long as it is kept up.
 - **How:** target and jump slash with a Deku Stick or the Megaton Hammer, open the item wheel, pick another item, let the game run until the weapon leaves Link's hand, pick the weapon again, close the wheel and press the weapon button, then reopen the wheel. Repeat.
-- **Height cap:** a normal jump stores the height it was made from, and jump slashes stop lifting Link above it. Sidehops, backflips and jump slashes do not set it. Returning to the title screen clears it. Runners plan where they last jumped so the stored height is enough for the next hover.
+- **Height cap:** a normal jump stores the height it was made from, and jump slashes stop lifting Link above it. Sidehops, backflips and jump slashes do not set it. Returning to the title screen clears it, and the ZSR wiki says changing age at the Master Sword does too. The cap is an absolute height that carries between maps, and maps sit at different heights: a jump in Hyrule Field sets a cap high enough to hover to the sky in Gerudo Fortress. Runners plan where they last jumped so the stored height is enough for the next hover.
 - **Variants:**
-  - *Backwards jumpslash* (bloonstd6master, 10 Nov): with no sword equipped, target, hold back, press A and tap ZL twice. It lets Link hover while moving backwards. The first Forest Escape setup used it.
+  - *Backwards jumpslash* (bloonstd6master, 10 Nov): with no sword equipped, target, hold back, press A and tap ZL twice. The ZSR wiki starts it from a backhop and releases the target button once the chain is going. Link hovers while moving backwards, which gains a lot of height in a small space, and holding target again turns it back into a forward hover three cancels later. The first Forest Escape setup used it.
   - *Faster start* (Kenny-Dumminik, 11 Nov): pressing the weapon button and A together while holding forward starts the hover without a first swing. Reported as possibly frame perfect.
   - *Pause method* (flutterdashie64, 8 Nov): the same chain driven by the pause button.
   - *Higher hover* (Tholive_ and Ataappi): a jump slash lets a Hover Boots hover start above the platform.
@@ -114,8 +114,9 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 ### Puberty skip
 
 - **Also known as:** child skip, early adult, "the Door of Time skip".
-- **What it does:** finishing an adult dungeon as child Link plays the sage cutscene and returns Link to the overworld as an adult, with the Kokiri Sword still equipped. The Door of Time never has to open. The Master Sword then arrives through the Light Arrow cutscene.
-- **Found by:** not clear. It was being passed around on 6 Nov, tvbrayden wrote it up on 7 Nov, and press coverage credits ZFG with reporting it.
+- **What it does:** finishing an adult dungeon as child Link plays the sage cutscene and returns Link to the overworld as an adult, with the Kokiri Sword still equipped. The Door of Time never has to open. The Master Sword then arrives through the Light Arrow cutscene, which checks only for the Shadow and Spirit medallions.
+- **Why it works:** the Shadow Temple's blue warp always loads the adult Graveyard map, and a map forces Link's age to match it. Current age and "has done the Master Sword sequence" are tracked separately, so Link is adult without that sequence ever running.
+- **Found by:** oussama and tvbrayden, per the ZSR wiki. It was being passed around on 6 Nov and tvbrayden wrote it up on 7 Nov. Press coverage credits ZFG with reporting it.
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. With the Song of Time skip it removes two of the three child dungeons.
 - **Video:** no good dedicated one; see the [2:05:25 run](https://www.youtube.com/watch?v=-Wxm7craXQA).
@@ -133,10 +134,10 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 
 ### Bomb T-pose
 
-- **Also known as:** bomb/chu T-pose, bomb pose, bomb clip.
+- **Also known as:** bomb pose (the ZSR wiki's name), bomb/chu T-pose, bomb clip.
 - **What it does:** putting the ocarina away while Link is breathing in leaves his upper-body animation in a wider state. Pulling a bomb or bombchu while moving then swings his arms out and pushes him through nearby collision.
-- **How:** hold any note until it wobbles (3 seconds or more), release it, wait half a second, put the ocarina away, then pull a bomb while moving. Nova found that any of Link's inhales works if the put-away is timed to it. Jumping, rolling, throwing the bomb or taking damage ends the state.
-- **Found by:** Pasty, 12 Nov.
+- **How:** hold any note until it wobbles (3 seconds or more), release it, wait half a second, put the ocarina away, then pull a bomb while moving. Nova found that any of Link's inhales works if the put-away is timed to it. Jumping, climbing, rolling, sliding, throwing or picking up a bomb, pulling one while standing still, or taking damage ends the state.
+- **Found by:** Pasty (PastyPixel), 12 Nov.
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high, as the clip used in the Song of Time skip.
 - **Video:** [Any% Is Now 20 Minutes Faster by ThreeLetterName](https://www.youtube.com/watch?v=4V1lRs6J-Sk), which shows the T-pose and the skip.
@@ -192,7 +193,7 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Also known as:** HS, hook storage.
 - **What it does:** if the hookshot is interrupted on the frame it attaches, the attach point is never cleared. The next hookshot release pulls Link to that stored point, through climbable walls and grates.
 - **How:** place two bombs so the first sets off the second and only the second hits Link. Stand against the wall, hold the hookshot, and release on the first frame of the first explosion. Runners pause buffer to find that frame. Unequipping the Iron Boots or falling from a slope can also interrupt it.
-- **Uses:** clips behind ladders and grates, the boss key skips below, and fast travel across a map (*fast hookshot storage movement*, Dusty_Carpet).
+- **Uses:** clips behind ladders and grates, the boss key skips below, and fast travel across a map (*fast hookshot storage movement*, Dusty_Carpet). It works on any actor, including ones the hookshot cannot normally target, such as push blocks and redeads.
 - **Found by:** NathanLoto, 8 Nov. The two-bomb setup is by GlitchesAndStuff.
 - **Works on:** 1.0 only. Releasing with the target unloaded crashes the game.
 - **Any% impact:** medium, and only for 1.0 runners.
@@ -208,7 +209,7 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
   - *Spirit:* Dusty_Carpet, 11 Nov; the setup most people use is by minimini352.
   - *Shadow:* Zas, NathanLoto, GlitchesAndStuff and Dusty_Carpet, 12 Nov.
 - **Works on:** 1.0 only. A Fire Temple version using the Yiga Warp exists but needs NG+.
-- **Any% impact:** medium. The Spirit skip is the one that matters, since Spirit is still completed.
+- **Any% impact:** medium. The Spirit skip is the one that matters, since Spirit is still completed. It goes straight to Twinrova's room, so it also skips the Nabooru fight.
 - **Video:** [Spirit Temple BK skip by minimini352](https://www.youtube.com/watch?v=irhpbegsgSc). Others: [Forest](https://www.youtube.com/watch?v=1ZHPVLBWiP0), [Fire](https://www.youtube.com/watch?v=Uhi7EqcHS4g), [Shadow](https://www.youtube.com/watch?v=QO6Mk7i-o6I).
 - **Frame Perfect:** partly. The storage setup and the jumpslash cancels are scriptable. The out-of-bounds navigation is not.
 
@@ -216,7 +217,7 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 
 ### Hover Boots bottle extension
 
-- **Also known as:** infinite Hover Boots, bottle hover.
+- **Also known as:** infinite Hover Boots (the ZSR wiki's working name), bottle hover.
 - **What it does:** swinging an empty bottle during a hover drops Link slightly and resets the hover timer, so the hover continues. It depends on the height of the floor below and fails over voids.
 - **Found by:** Quib, 7 Nov.
 - **Works on:** not stated.
@@ -226,7 +227,8 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 
 ### Hover jump
 
-- **What it does:** turning during a hover and unequipping the boots on the turn gives a jump from mid-air, in any direction.
+- **Also known as:** jumping out of Hover Boots.
+- **What it does:** near the end of a hover, turning around and back allows a jump from mid-air. Unequipping the boots on the second turn gives a forward jump, and it works in any direction.
 - **Found by:** Dry4Haz, 7 Nov.
 - **Works on:** not stated.
 - **Any% impact:** low. Small skips in the Ice Cavern and trials.
@@ -256,6 +258,7 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **What it does:** hovering over trigger zones skips the Mido conversation, the Deku Tree cutscene and the Hyrule Field owl.
 - **Found by:** several people between 8 and 13 Nov. dannyb posted the field owl skip.
 - **Works on:** 1.0 and 1.1.1.
+- **Side effect:** the day and night cycle only starts once the Hyrule Field owl cutscene has been watched. Skipping it freezes time at early morning for the whole game, which rules the skip out for 100%.
 - **Any% impact:** low. Seconds each.
 - **Video:** none verified.
 - **Frame Perfect:** partly, as short jumpslash cancels.
@@ -279,13 +282,13 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Video:** [Child Boss Quick-kill Methods by bradyONE](https://www.youtube.com/watch?v=cdgZDQoIeqw).
 - **Frame Perfect:** partly. The damage strings are scriptable, but bosses move and some phases are random.
 
-### Slingshot on castle guards
+### Castle guard shot
 
 - **What it does:** a slingshot hit stuns a Hyrule Castle guard, which allows a shorter line through the grounds.
-- **Found by:** not known. It came up in the routing thread on 15 Nov and was still being tested on 16 Nov.
+- **Found by:** not known. StratDB dates it 12 Nov. Runners were still working out how far it goes on 16 Nov.
 - **Works on:** not stated.
 - **Any% impact:** low.
-- **Video:** none.
+- **Video:** [Guard Shot Optimization by Jethro TV](https://www.youtube.com/watch?v=MAhhp90xVrM).
 - **Frame Perfect:** no.
 
 ## None so far
@@ -367,7 +370,7 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Hookshot extension** (LegendofLuke, 7 Nov): the camera can be offset so a projectile starts from somewhere other than Link.
 - **Hookshot fling** (Benjamin Datum, 8 Nov): hookshotting a fence with something solid in the landing spot launches Link.
 - **Bow flag manipulation** (tvbrayden, 8 Nov): the Light Arrow cutscene may hand over the bow. Unconfirmed, and the test file had been edited.
-- **Deku Tree as adult** (tvbrayden, 10 Nov): the Deku Tree's blue warp returns adult Link to childhood. Windocks showed it carries adult equipment over.
+- **Reverse Puberty Adventure** (tvbrayden, 10 Nov), also called Deku Tree as adult: the Deku Tree's blue warp always loads child Kokiri Forest, so it returns adult Link to childhood without the Forest Temple being finished. Windocks showed it carries adult equipment over.
 - **Knockback cancel** (RoboRotembo, 8 Nov): damage taken during the ocarina put-away animation causes no knockback.
 - **Items underwater** (Türkenheimer and Lucas, 7 Nov).
 - **Fishing rod steal** (DobleC, 11 Nov): unequip the Iron Boots as the fish leaves the water and the rod stays on the item button. Tested on 1.1.1.
@@ -391,3 +394,13 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **NG+:** a run that depends on something set up in an earlier playthrough.
 - **OoB:** out of bounds.
 - **Void plane:** an invisible surface that respawns Link when he touches it.
+
+## Sources
+
+- **[ZSR wiki, Ocarina of Time 2026](https://www.zsr.gg/oot2026):** the community wiki. Technique pages go deeper on mechanics than this list, and tricks are filed by area, dungeon and boss. Start with [Jumpslash Cancel](https://www.zsr.gg/oot2026/tech/jumpslash-cancel), [Puberty Skip](https://www.zsr.gg/oot2026/tech/puberty-skip) and [Progression Triggers](https://www.zsr.gg/oot2026/general/progression-triggers).
+- **[StratDB](https://www.stratdb.app/search?game=155):** a searchable index of strat videos, tagged by location, items, age, patch and difficulty.
+- **[speedrun.com leaderboard](https://www.speedrun.com/oot26):** rules and runs.
+- **[Ocarina of Time 2026 Discord](https://www.zsr.gg/discords):** where finds are posted first. The per-glitch threads in its speedrunning-videos forum are the primary source for most entries here.
+- **[Object map viewer](https://objmap-oot.zeldamods.org/):** maps, actors and collision for every area.
+- **[sloperina](https://github.com/PracticeROM/sloperina):** the practice tool, with a jump-height watch, frame advance and an input display.
+- **Tutorials:** [Jumpslash Cancel by gymnast86](https://www.youtube.com/watch?v=4HSZ6GMQCZk) and [Actor Jumping by Kethaldo](https://www.youtube.com/watch?v=Rop0oeZVk24).
