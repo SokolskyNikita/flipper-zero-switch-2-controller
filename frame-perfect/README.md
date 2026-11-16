@@ -65,6 +65,8 @@ Inputs: `A B X Y L R ZL ZR PLUS MINUS HOME CAPTURE LS RS UP DOWN LEFT RIGHT`, st
 
 The protocol is documented at the top of the Remote mode section in `frame_perfect.c`; the workflow is in [SUPERJUMP-RUNBOOK.md](../SUPERJUMP-RUNBOOK.md).
 
+`tools/fp_switch2.py` (`fp`) wraps a whole super-jump session in a few commands, and `tools/flipper.py` (`flipper`) holds the generic Flipper helpers it uses; see [SUPERJUMP-RUNBOOK.md](../SUPERJUMP-RUNBOOK.md#quick-commands).
+
 ## How the timing works
 
 Each time the console reads a report (USB IN transfer complete, in the interrupt), the next report is built immediately. For scheduled runs it is built for the moment of the next read, one poll period ahead, so a change reaches the console at the first read at or after its scheduled time. Sequences are timed against the DWT cycle counter in µs; frames and ms are summed separately so rounding never accumulates. Frame mode maps each read to a frame of the grid the Mac sends: a read at least 6 ms into frame N carries frame N's state.

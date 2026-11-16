@@ -1,0 +1,23 @@
+# Ocarina of Time (Switch 2): put Link into the super jump's start state from
+# wherever an aborted run left him. Run by `fp setup` and before `fp jump`.
+# - B x3 cancels a menu or text box (with no menu open it swings the sword,
+#   which also puts the Deku Stick away; ZR draws it again below).
+# - R wheel + stick LEFT always selects the Deku Stick slot, so ZR ends up
+#   with the Deku Stick even if a stopped run left the Slingshot there.
+# - ZR draws the stick, ZL recentres the camera behind Link.
+fps 60
+3 -
+5 B
+10 -
+5 B
+10 -
+5 B
+25 -
+15 R
+5 R LX-
+2 R
+40 -
+8 ZR
+35 -
+18 ZL
+20 -

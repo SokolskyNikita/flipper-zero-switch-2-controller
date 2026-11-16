@@ -40,6 +40,7 @@ import os
 import random
 import re
 import select
+import signal
 import socket
 import statistics
 import struct
@@ -177,6 +178,8 @@ class Tv:
             "echo 0 > $I/tracing_on; echo mono_raw > $I/trace_clock; echo > $I/trace; "
             "echo 'irq==134' > $I/events/irq/irq_handler_entry/filter; "
             "echo 1 > $I/events/irq/irq_handler_entry/enable; echo 1 > $I/tracing_on; "
+            # readers left by a serve that died would split the frames with us
+            "for p in /proc/[0-9]*; do [ \"$(tr '\\0' ' ' < $p/cmdline 2>/dev/null)\" = \"cat $I/trace_pipe \" ] && kill ${p#/proc/}; done; "
             "exec cat $I/trace_pipe")
         self.stream = subprocess.Popen(TV_SSH + [TV_HOST, setup], stdout=subprocess.PIPE,
                                        stderr=subprocess.PIPE, text=True, bufsize=1)
@@ -797,20 +800,27 @@ class Server:
                 raise SystemExit("No TV configured (tv_host in private/config.json): use --fake-grid or --no-tv")
             self.tv = Tv(self.log)
             self.tv.start()
-        await self.connect()
-        tasks = [asyncio.create_task(self.ping_loop()), asyncio.create_task(self.grid_loop())]
-        await self.stop_event.wait()
-        for t in tasks:
-            t.cancel()
-        srv.close()
-        if self.tv:
-            self.tv.stop()
+        # SIGTERM or a failed connect must still stop the TV trace: a leftover
+        # reader on the same trace_pipe takes every other frame from the next serve.
+        asyncio.get_running_loop().add_signal_handler(signal.SIGTERM, asyncio.current_task().cancel)
+        tasks = []
         try:
-            await self.client.disconnect()
-        except Exception:  # noqa: BLE001
-            pass
-        os.unlink(SOCK)
-        self.log("serve_stop")
+            await self.connect()
+            tasks = [asyncio.create_task(self.ping_loop()), asyncio.create_task(self.grid_loop())]
+            await self.stop_event.wait()
+        finally:
+            for t in tasks:
+                t.cancel()
+            srv.close()
+            if self.tv:
+                self.tv.stop()
+            try:
+                await self.client.disconnect()
+            except Exception:  # noqa: BLE001
+                pass
+            if os.path.exists(SOCK):
+                os.unlink(SOCK)
+            self.log("serve_stop")
 
 
 def client(req, timeout=120):

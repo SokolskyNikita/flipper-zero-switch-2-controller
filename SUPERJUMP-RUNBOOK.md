@@ -2,6 +2,21 @@
 
 How to run the Flipper-driven super jump and recover when something breaks. The inputs and why they work: [SUPERJUMP.md](SUPERJUMP.md). Run every command below from `frame-perfect/` (`cd frame-perfect`).
 
+## Quick commands
+
+Two wrappers do the steps below. `tools/flipper.py` is generic Flipper Zero work (USB CLI, start or close an app, upload, run a script under the Bluetooth wrapper, keep the Mac awake). `tools/fp_switch2.py` is this task only and is built on `flipper.py`. To use them from anywhere: `ln -s "$PWD/tools/flipper.py" ~/.local/bin/flipper` and `ln -s "$PWD/tools/fp_switch2.py" ~/.local/bin/fp` from `frame-perfect/`.
+
+| When | Command | Does |
+| --- | --- | --- |
+| Flipper on the Mac's USB | `fp prep` | starts the app in Remote mode if needed (over USB), starts `serve`, keeps the Mac awake while `serve` runs, USB clock calibration (45 s), prints the drift since the last calibration |
+| Flipper on the dock | `fp ready` | `usb-on`, `claim`, timing preflight (`--no-check` skips it) |
+| Jump | `fp jump [LOOPS] [--capture]` | `fp setup` first: it takes controller 1 back (L+R ×2, A ×2, so you can move Link with your own controller between runs; `--no-claim` skips it), then plays `sequences/oot_setup.txt`: B ×3 to cancel any menu or text, R wheel + left to put the Deku Stick back on ZR (a stopped run can leave the Slingshot there), ZR to draw it, ZL to recentre the camera; ~4 s, `--no-setup` skips it), then the super jump, 16 loops (24 with `--capture`) |
+| Between jumps | `fp turn left\|right\|back`, `fp draw` | turn Link and recentre the camera; swing the Deku Stick out |
+| Anytime | `fp st`, `fp drift`, `fp check`, `fp log` | status; calibration history plus the TV frame-grid fit; preflight; follow `serve`'s log |
+| Done | `fp down [--app]` | stop `serve` (and quit the Flipper app) |
+
+Anything else goes straight to `fp_remote.py` (`fp hold A 150`, `fp go --safe-us 7000`). Calibrate after the last `serve` restart: a new Bluetooth link can move the bias by up to ~0.9 ms by itself, while the drift on one link is only ~0.2 ms over 7 h (2026-11-09). `fp drift` flags calibrations with a new link in between.
+
 ## The pieces
 
 | Part | Role |
@@ -55,10 +70,12 @@ It prints which frame each input reached the console on, and `OUTDIR/sheet.png` 
 | --- | --- |
 | `fp_remote.py` says "No such file" / connection refused | `serve` isn't running: `tools/ble-app/run.sh 'tools/fp_remote.py serve'` (run in the background; it reloads the clock correction from `tools/.fp_calib.json`) |
 | `status` shows `bt: false` for a while | `serve` reconnects every 3 s by itself. If the Flipper app quit or crashed, start it over Bluetooth: `tools/ble-app/run.sh 'tools/ble_rpc.py start /ext/apps/USB/frame_perfect.fap remote'`, then `usb-on` and `claim` |
+| Link turns or aims first-person at the start | The Slingshot is on ZR (a run was stopped mid-swap). `fp setup` puts the Deku Stick back |
 | "Press L+R" screen appears | Someone pressed a button on the other controller. `claim` again |
 | Link didn't climb | First suspect the swap-off: record an attempt and check the stick left his hand. Then the start position: Link facing a wall, or ZL locked onto something |
 | Timing drifts (preflight phases outside 6–14 ms; frame mode is the default, `go --safe-us 6000`) | The Bluetooth clock correction wanders ~0.4 ms per half hour; a new Bluetooth connection may shift it more. Best fix: put the Flipper on the Mac's USB and run `python3 tools/fp_remote.py calibrate --seconds 45` (then `usb-on` and back to the dock). Quick fix: `go --safe-us 7000` (or 5000) to shift the window |
 | New Flipper build | `python3 tools/fp_remote.py update dist/frame_perfect.fap`, all over Bluetooth (~95 s at 0.7 KB/s), then `usb-on`, `claim` |
+| `fp drift` warns of a doubled (~33 ms) grid period or more than one TV trace reader | A `serve` that died before 2026-11-09's fix left its `cat trace_pipe` on the TV, and the two readers split the frames. `fp down`, then `fp up`: a new `serve` kills stale readers, and `serve` now stops the trace on a failed connect or SIGTERM |
 | Mac went to sleep | Bluetooth drops. `serve` reconnects, but run the preflight before trusting the timing |
 
 ## Limits and notes
