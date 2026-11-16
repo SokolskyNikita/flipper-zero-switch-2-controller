@@ -21,14 +21,14 @@ Sorted by discovery date.
 | 5 Nov | Hitstop launches | Landing a hit at the right moment flings Link; explained 16 Nov | first clip by RoyArashi; explained by RoboRotembo | none yet | not stated |
 | 6 Nov | Actor jump | Huge jump off a chest, grave, box or bean plant | Vidya James (bean jump); Ataappi (general form) | high | 1.0 + 1.1.1 |
 | 6 Nov | Puberty skip | Beating an adult dungeon as a child turns Link adult | oussama and tvbrayden | high | 1.0 + 1.1.1 |
-| 7 Nov | Deku Tree B1 skip | Reach the basement ledge early | Ataappi | low | 1.0 + 1.1.1 |
+| 7 Nov | Deku Tree B1 skip | Reach a basement ledge early and skip rooms before the boss | Ataappi | low | 1.0 + 1.1.1 |
 | 7 Nov | Hookshot extension | Fire a projectile from an offset camera position | LegendofLuke | none | not stated |
 | 7 Nov | Hover Boots bottle extension | Bottle swings reset the hover timer | Quib | low | not stated |
 | 7 Nov | Hover jump | Jump out of the end of a hover | Dry4Haz | low | not stated |
 | 7 Nov | Jumpslash cancel | Chain mid-air jump slashes to gain unlimited height | Ataappi | high | 1.0 + 1.1.1 |
 | 7 Nov | Items underwater | Use items while submerged | Türkenheimer / Lucas | none | not stated |
 | 8 Nov | Knockback cancel | The ocarina put-away animation ignores knockback | RoboRotembo | none | not stated |
-| 8 Nov | Gerudo Fortress skip | Cross the fortress to the far load zone over invisible floors | python; actor-jump version by Tach and Vinek | low | not stated |
+| 8 Nov | Gerudo Fortress skip | Reach the Haunted Wasteland without opening the fortress gate | python; actor-jump version by Tach and Vinek | low | not stated |
 | 8 Nov | Cutscene skips | Fly over the Mido, Deku Tree and field owl triggers | several; field owl by dannyb | low | 1.0 + 1.1.1 |
 | 8 Nov | Hookshot storage | A cancelled hookshot stays "attached" and pulls Link later | NathanLoto | mid | 1.0 only |
 | 8 Nov | Hookshot fling | Hookshot into a tight spot launches Link | Benjamin Datum | none | not stated |
@@ -55,13 +55,36 @@ Sorted by discovery date.
 | 15 Nov | Temple of Time door skip | Get past the Door of Time from above | Truman | none | 1.1.1 (tag), 1.0 not stated |
 | 15 Nov | Enemy AI disable | Insta-rolling in a Water Temple room freezes enemies | Kædesakz | none | 1.0 (tag), 1.1.1 not stated |
 
-## Route and records (16 Nov)
+## How the route got here
+
+### The normal game
+
+1. **Child:** Deku Tree, meet Zelda, Dodongo's Cavern, Jabu-Jabu. The Goron's Ruby and Zora's Sapphire trigger Zelda's escape, which gives the Ocarina of Time and the Song of Time. The song and all three stones open the Door of Time, and pulling the Master Sword makes Link an adult.
+2. **Adult:** Hookshot from Dampé, then the Forest Temple (bow), Fire Temple (Megaton Hammer), Ice Cavern (Iron Boots) and Water Temple (Longshot). Finishing Forest, Fire and Water unlocks the Nocturne of Shadow, the warp to the Shadow Temple. The Spirit Temple needs a trip back to childhood.
+3. **End:** the Shadow and Spirit medallions trigger the Light Arrow cutscene and the bridge to Ganondorf's Castle. Then six trials, Ganondorf, the tower collapse (which needs the Longshot) and Ganon.
+
+### The route around 9 Nov (about 3:02)
+
+Still all three child dungeons, the Door of Time and the Master Sword. The savings were all on the adult side:
+
+- **Shadow Temple without the Nocturne.** An actor jump or jumpslash cancel reaches the entrance directly, so the Forest, Fire and Water temples no longer had to be finished.
+- **Those temples were still entered** for their items: bow, hammer and Longshot. The Ice Cavern was still needed for the Iron Boots.
+- **Spirit Temple from the adult side only**, jumping straight to the Mirror Shield.
+
+### What changed after that
+
+- **Shadow Temple as a child (in runs by 12 Nov, 2:51).** The puberty skip had been known since 6 Nov but needed a way to get child Link through the temple, which jumpslash cancels gave. It replaced the Door of Time, the Master Sword cutscenes and the walk there. All three child dungeons stayed, because the Song of Time was still needed for one block in the Forest Temple.
+- **Song of Time skip (12 Nov, 2:29).** With that block passable, the song was not needed at all. Dodongo's Cavern is now entered only for the bomb bag, and Jabu-Jabu is skipped. About 20 minutes.
+- **Longshot and Iron Boots skips (14 Nov, 2:16).** The Longshot was needed for the tower collapse, the Fire trial and the Spirit Temple boss door, and all three got skips. The Iron Boots were needed to enter the Water Temple. After the Song of Time skip they were also needed inside the Forest Temple, which does not need them in a normal playthrough: the skip brings Link into the east courtyard first, with the well to the west courtyard still flooded, and the boots were the only way through it. The Iron Boots skip bypasses the well. Runs also used the boots for the underwater shortcut between Zora's River and the Lost Woods, but only to save travel. The Ice Cavern and Water Temple dropped out. About 20 minutes.
+
+### The route now (16 Nov)
 
 - **Fastest run found:** [2:05:25 by Rick Schmidty](https://www.youtube.com/watch?v=-Wxm7craXQA), 15 November. The time includes a 24-second allowance, because cartridge loads are about 24 seconds slower than digital over a run and the community is still deciding how to treat that.
-- **Route outline:** Deku Tree with cutscene skips, Zelda, bombs from Dodongo's Cavern, Din's Fire, Shadow Temple as a child (which makes Link adult), Hookshot, Megaton Hammer, then Spirit and Forest for the bow, Ganon's Castle trials and the tower collapse.
-- **No longer needed:** Jabu-Jabu, finishing Dodongo's Cavern, the Song of Time, the Ice Cavern and Iron Boots, the Water Temple and Longshot, and finishing the Forest and Fire temples, which are entered only for the bow and hammer.
-- **Why Spirit comes before Forest:** the favoured Iron Boots skip setup needs a shield for its turns.
-- **Still required:** the trials, a bottle (only for blue fire in the trials), and the Light Arrow cutscene, which also hands over the Master Sword.
+- **Child:** Deku Tree (cutscene skip, B1 skip, Gohma), ocarina from Saria, market bottle, Zelda's Lullaby, Saria's Song, Goron's Bracelet, bomb bag from Dodongo's Cavern, magic and Din's Fire from the Death Mountain Crater fairy, then the Shadow Temple, which ends with Link as an adult.
+- **Adult:** Hookshot, Goron Tunic, Fire Temple as far as the hammer, Gerudo gate skip, straight to the Mirror Shield, Spirit Temple and Twinrova, Forest Temple for the bow (Song of Time skip, then the Iron Boots skip), Light Arrow cutscene, six trials, Ganondorf, the collapse with the Longshot skip, Ganon.
+- **Why Spirit comes before Forest:** the favoured Iron Boots skip setup needs a shield. The route sheet calls the Deku Shield unreliable for it and the Mirror Shield, from the Spirit Temple, guaranteed.
+- **Still required:** all six trials, a bottle (only for blue fire in the Water trial), and the Light Arrow cutscene, which also hands over the Master Sword.
+- **Version differences:** 1.0 runners add the Spirit boss key skip. The route sheet expects Hover Boots to be skipped on 1.0 and taken on 1.1.1.
 
 ## High impact
 
@@ -78,14 +101,14 @@ Sorted by discovery date.
   - *Higher hover* (Tholive_ and Ataappi): a jump slash lets a Hover Boots hover start above the platform.
 - **Found by:** Ataappi, 7 Nov. The mechanics were written up by nathanisbored.
 - **Works on:** 1.0 and 1.1.1.
-- **Any% impact:** high. It gets child Link into the Shadow Temple, replaces most dungeon climbing, and is part of nearly every other skip here.
+- **Any% impact:** high. The Shadow Temple is normally reached as an adult with the Nocturne of Shadow, which needs the Forest, Fire and Water temples finished. Hovering to the entrance removed that, and later let child Link clear the temple. It also replaces most dungeon climbing and is part of nearly every other skip here.
 - **Video:** [Jumpslash Cancel Glitch Tutorial by gymnast86](https://www.youtube.com/watch?v=4HSZ6GMQCZk).
 
 ### Actor jump
 
 - **Also known as:** actor bouncing, ocarina jump, bean jump, bean flower jump, chest jump, child super jump, hookshot jump.
 - **What it does:** jumping on the frame an aim or ocarina animation ends, while standing on a movable or interactive object, launches Link far higher than a normal jump. A moving object adds its speed.
-- **How:** stand on an actor (chest, gravestone, box, block, bean plant), hold target, take out the ocarina, turn the camera all the way down, put the ocarina away and press jump a moment later. The hookshot, bow and slingshot work in place of the ocarina. Child Link can do it with only the Hylian Shield, and RoboRotembo showed on 9 Nov that opening the item wheel works with no item at all.
+- **How:** stand on an actor (chest, gravestone, box, block, bean plant), hold target, take out the ocarina, turn the camera all the way down, put the ocarina away and press jump a moment later. The hookshot, bow, slingshot and boomerang work in place of the ocarina. Child Link can do it with only the Hylian Shield, and RoboRotembo showed on 9 Nov that opening the item wheel works with no item at all.
 - **Variants:**
   - *Bean jump* (Vidya James, 6 Nov): the first form found, off a moving bean plant.
   - *Directional actor jump* (Hellios, 10 Nov): releasing the ocarina quickly steers the launch.
@@ -102,7 +125,7 @@ Sorted by discovery date.
 - **Why it works:** the Shadow Temple's blue warp always loads the adult Graveyard map, and a map forces Link's age to match it. Current age and "has done the Master Sword sequence" are tracked separately, so Link is adult without that sequence ever running.
 - **Found by:** oussama and tvbrayden, per the ZSR wiki. It was being passed around on 6 Nov and tvbrayden wrote it up on 7 Nov. Press coverage credits ZFG with reporting it.
 - **Works on:** 1.0 and 1.1.1.
-- **Any% impact:** high. With the Song of Time skip it removes two of the three child dungeons.
+- **Any% impact:** high. On its own it replaced the Door of Time and Master Sword sequence, which was a few minutes. It is also what let the Song of Time skip remove two child dungeons, because the stones no longer had any other use.
 - **Video:** no good dedicated one; see the [2:05:25 run](https://www.youtube.com/watch?v=-Wxm7craXQA).
 
 ### Save/load respawn manipulation
@@ -127,19 +150,19 @@ Sorted by discovery date.
 ### Song of Time skip
 
 - **Also known as:** SoT skip, SoT block skip.
-- **What it does:** gets past the Song of Time block in the Forest Temple without the song. Hover to the top of a pillar, save, do the bomb T-pose to clip into the corner, save again and reload: Link loads into the courtyard beyond the door.
+- **What it does:** the bow is in the Forest Temple, behind a block that only the Song of Time removes. This skip reaches the east courtyard without the song. Hover to the top of a column in the main room, save, do the bomb T-pose to wedge Link into the corner, save again and reload: Link loads into the courtyard on the other side of the wall. The bow is on the west side. Normally the well between the two courtyards is crossed from the west after it has been drained, but arriving from the east it is still flooded, so crossing it needs the Iron Boots, unless the Iron Boots skip below is used.
 - **Found by:** Ultraspeed7 found the save/load spot (11 Nov), Pasty the T-pose, and ontrigger posted the first full clip on 12 Nov. Later setups by Lid, Layz, jakezsr and CrypticJacknife cut the hover from about 60 cancels to under 20.
 - **Works on:** 1.0 and 1.1.1.
-- **Any% impact:** high. The song was needed only for this block, so Dodongo's Cavern and Jabu-Jabu no longer have to be finished. About 20 minutes.
+- **Any% impact:** high. In this route the song was needed only for this block. Learning it takes the Goron's Ruby and Zora's Sapphire, so Dodongo's Cavern and Jabu-Jabu no longer have to be finished. About 20 minutes.
 - **Video:** [Forest Temple SoT skip by ontrigger](https://www.youtube.com/watch?v=wEKZvrajzQE). Tutorial: [ThreeLetterName](https://www.youtube.com/watch?v=4V1lRs6J-Sk).
 
 ### Iron Boots skip (Invalid Respawn)
 
 - **Also known as:** irons skip, bow room void, "bomb respawn".
-- **What it does:** enters the Forest Temple bow room without the Iron Boots. Playing the ocarina in a ceiling corner of the east courtyard sets the respawn point there. Bombs placed on that exact spot make the point invalid, and voiding out (which does not despawn bombs, unlike a reload) moves Link to the next valid place, inside the Stalfos room.
+- **What it does:** reaches the bow without the Iron Boots. A normal playthrough does not need the boots in this temple at all. They became a requirement only because the Song of Time skip leaves Link in the east courtyard, where the way on is through a well that is still flooded and needs the boots to sink. This skip goes from the east courtyard straight into the Stalfos room that holds the bow. Playing the ocarina in a ceiling corner of the east courtyard sets the respawn point there. Bombs placed on that exact spot make the point invalid, and voiding out (which does not despawn bombs, unlike a reload) moves Link to the next valid place, inside the Stalfos room.
 - **Found by:** Ultraspeed7, 14 Nov. Bomb-throw lineup by DrDiabeteus. The setup most runners use, with shield turns and a single bomb throw, is by sva (15 Nov).
 - **Works on:** 1.0 and 1.1.1.
-- **Any% impact:** high. With the Longshot skip it removes the Ice Cavern and Water Temple. About 20 minutes.
+- **Any% impact:** high. The Iron Boots come from the Ice Cavern and were also needed to enter the Water Temple for the Longshot. With the Longshot skip, both places drop out of the route. About 20 minutes.
 - **Video:** [Iron Boots Skip from Actor Jump](https://www.youtube.com/watch?v=pyZic3Uyp08). Without Hookshot: [Song of Time Skip (No Iron Boots / Hookshot) by karterfreak](https://www.youtube.com/watch?v=RyWAgiSeS9M).
 
 ### Collapse Longshot skip
@@ -151,7 +174,7 @@ Sorted by discovery date.
   - *Rizz skip:* hover higher and send a bombchu around the corner so the cutscene never plays. The bombchu's path varies, so it is less reliable.
 - **Found by:** zfg mapped the void plane on 10 Nov. HenglesZ found the flame-wall despawn. On 14 Nov dannyb and RoboRotembo got both methods working within about an hour of each other.
 - **Works on:** 1.0 and 1.1.1.
-- **Any% impact:** high. The Longshot's last required use is gone, and with it the Water Temple.
+- **Any% impact:** high. The Longshot comes from the Water Temple. Its other uses in the route, in the Fire trial and at the Spirit Temple boss door, have skips of their own (the Spirit one by Ymuy, 14 Nov), so the Water Temple is no longer needed.
 - **Video:** [Skip Longshot in Tower Collapse by dannyb](https://www.youtube.com/watch?v=-VOZJwH2BUc). Rizz skip: [Taechuk](https://www.youtube.com/watch?v=rEj3BjL5gPk).
 
 ## Medium impact
@@ -210,7 +233,7 @@ Sorted by discovery date.
 
 ### Deku Tree B1 skip
 
-- **What it does:** reaches the basement ledge directly, skipping most of the dungeon. A jumpslash cancel ledge grab (doublea) made it easier.
+- **What it does:** climbs to a basement ledge that is normally reached later, which skips rooms on the way to the boss, the water room among them. A jumpslash cancel ledge grab (doublea) made it easier.
 - **Found by:** Ataappi, 7 Nov.
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** low.
@@ -218,7 +241,7 @@ Sorted by discovery date.
 
 ### Gerudo Fortress skip
 
-- **What it does:** hover or actor jump onto invisible floors above the fortress and drop into the load zone on the far side. Routing posts call the related trick at the gate the Gerudo gate skip.
+- **What it does:** hover or actor jump over the fortress and its gate into the Haunted Wasteland load zone, without freeing the carpenters to get the gate opened. Routing posts also call it the Gerudo gate skip. python reported that the Gerudo stop being hostile afterwards; another tester was still arrested.
 - **Found by:** python, 8 Nov. Actor-jump version by Tach, from a proof of concept by Vinek.
 - **Works on:** not stated.
 - **Any% impact:** low.
