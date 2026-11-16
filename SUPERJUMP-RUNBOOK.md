@@ -31,10 +31,10 @@ Anything else goes straight to `fp_remote.py` (`fp hold A 150`, `fp go --safe-us
 1. **Hand control to the Flipper:** `python3 tools/fp_remote.py claim` (L+R twice, then A). Your own controller stays connected. Take it back with L+R, then A, on your controller.
 2. **Game state:**
    - Link standing on the ground, facing where the jump should go.
-   - No NPC in front: ZL targeting can turn Link toward one.
+   - No NPC in front: ZL targeting can turn Link toward one, and next to a talkable one ZL + A starts a conversation instead of the jump slash.
    - **Deku Stick on ZR and drawn.** If it's put away, `python3 tools/fp_remote.py hold ZR 120` swings it out.
    - In the R wheel, the Fairy Slingshot is directly right of the Deku Stick.
-   - No X jump since loading from the title screen (a regular jump caps the height until you reload).
+   - No X jump or sidehop since loading from the title screen (either caps the height until you reload).
 3. **Optional timing preflight,** about 20 s; opens the item menu 4 times:
    `uv run --with numpy --with pillow python tools/check_timing.py`
    It should print "TIMING OK". If it doesn't, see "Timing drifts" below.

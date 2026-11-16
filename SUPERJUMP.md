@@ -4,6 +4,8 @@ The jumpslash-cancel "infinite jump", done by Frame Perfect. Every number here w
 
 **Video:** [Super Jump in the Ocarina of Time Remake](https://www.youtube.com/watch?v=hTiaGGzQzuU). Child Link reaches the Shadow Temple entrance from the Kakariko Graveyard (v1.1.1, Switch 2). The first loop is broken down frame by frame, and the end shows a normal jump breaking the trick.
 
+**Why it works:** the game code was read and traced in an emulator on 2026-11-16. Notes below marked "from the code" or "emulator trace" come from that work.
+
 ## Keys (child Link, this remake)
 
 | Key | Does |
@@ -11,14 +13,15 @@ The jumpslash-cancel "infinite jump", done by Frame Perfect. Every number here w
 | ZL | lock-on / target (alone it raises the shield) |
 | ZL + stick forward + A | jump slash, only with an item drawn |
 | ZR | swing the equipped item (the Deku Stick) |
-| ZL + ZR, mid-air, right after the stick is re-equipped | a new mid-air jump attack with its own upward push; each loop of the super jump chains one of these |
+| ZL + ZR, mid-air, right after the stick is re-equipped | a new mid-air jump attack with its own upward push; each loop of the super jump chains one of these. The stick only has to be back on ZR, not drawn, and the push comes only while Link is still rising (from the code) |
 | R (held) | item wheel: the game pauses while it's open; the left stick moves the selection; releasing R equips the highlighted item |
-| X | jump. **Never press it**: a regular jump caps the height until you reload from the title screen (tested: two X jumps right before the sequence, and the 8 loops gained no height) |
+| X | jump. **Never press it**: a regular jump caps the height until you reload from the title screen (tested: two X jumps right before the sequence, and the 8 loops gained no height). The cap is the jump's peak, take-off height + 0.7 m. **A sidehop sets the same cap** (from the code); a backflip does not |
 
 **Setup:**
 - Deku Stick on ZR and drawn (one ZR swing).
 - Fairy Slingshot directly right of the Deku Stick in the R wheel.
 - Link standing on open ground.
+- No talkable NPC close by: next to one, ZL + A starts a conversation instead of the jump slash.
 - Switch VRR Output off.
 
 ## What the game does (measured)
@@ -29,7 +32,7 @@ The jumpslash-cancel "infinite jump", done by Frame Perfect. Every number here w
 | R pressed → wheel visible | ~6 frames (100 ms); fully open ~10 frames (167 ms) |
 | R released → game runs again | **9–12 frames (150–200 ms)**: purple "equipped" flash, then a fade. Varies by about a frame |
 | R pressed → game paused | ~6 frames (100 ms) |
-| Slingshot selected, game running → stick leaves Link's hand | **3rd running frame** (~50 ms) |
+| Slingshot selected, game running → stick leaves Link's hand | **3rd running frame** (~50 ms). The slash itself already ends on the 1st running frame, when the item on ZR changes (emulator trace) |
 | ZR while the wheel is still closing | **swallowed**. It must reach the game on a running frame |
 | A (jump slash) → Link leaves the ground | ~8–12 frames; lands ~26 frames after A |
 
@@ -52,14 +55,14 @@ ZL (lock-on) is held from frame 3 of the opening to the end of the last loop, so
 | --- | --- | --- | --- |
 | 0–4 | R + left stick right | 5 frames | moves the wheel's highlight one slot right, from the Deku Stick to the Fairy Slingshot. Any other item would do: it only has to make Link put the stick away |
 | 5–6 | R | 2 frames | left stick back to centre, so the flick moves exactly one slot |
-| 7–15 | nothing else | **9 frames** | releasing R doesn't unpause at once: the game stays paused another 9–12 frames (equip flash, then fade), so 9 frames buys only ~3–6 running frames. The stick leaves Link's hand on the 3rd; 7 frames worked once and failed once |
+| 7–15 | nothing else | **9 frames** | releasing R doesn't unpause at once: the game stays paused another 9–12 frames (equip flash, then fade), so 9 frames buys only ~3–6 running frames. The stick leaves Link's hand on the 3rd; 7 frames worked once and failed once. One running frame is enough to end the slash (emulator trace), so the 9 is there for the resume delay, not for the stick |
 | 16–30 | R | 15 frames | |
 | 31–35 | R + left stick left | 5 frames | moves the highlight one slot left, back to the Deku Stick, so releasing R re-equips it. Re-equipping it mid-air is what makes another jump attack possible |
 | 36–37 | R | 2 frames | |
 | 38–44 | nothing else | 7 frames | no ZR yet: the game is still paused during the fade, and a ZR pressed then is ignored |
 | 45–49 | **ZR** on frames 45, 47 and 49 | 5 frames | why three taps: ZR only counts as a fresh press (released → pressed) on a running frame, and the first running frame drifts by a frame or so. Three taps two frames apart make sure one lands on it |
 | 50 | nothing else | 1 frame | |
-| 51–65 | R | 15 frames | pause again right away: once Link passes the apex and starts falling, no jump attack lifts him again. The game should run only ~8–10 frames per loop |
+| 51–65 | R | 15 frames | pause again right away: once Link passes the apex and starts falling, no jump attack lifts him again. The game should run only ~8–10 frames per loop: a mid-air slash gives about 12 rising frames, and a launch after that gets no lift (from the code) |
 
 ## What didn't work
 
@@ -70,7 +73,7 @@ ZL (lock-on) is held from frame 3 of the opening to the end of the last loop, so
 | Swap-off release of 4–6 frames | 1–3 running frames: the stick stays in hand |
 | Swap-off release of 7 frames | worked once, failed once (the 9–12 frame resume delay varies) |
 | ZR 1 frame after releasing R | swallowed while the wheel was closing |
-| Double ZR at +8/+10, 3 frames of rise | ~13 running frames per loop: Link sank lower each cycle and landed |
+| Double ZR at +8/+10, 3 frames of rise | ~13 running frames per loop: Link sank lower each cycle and landed. By then he has stopped rising, so each new slash gets no lift (from the code) |
 
 ## The sequence file ([`frame-perfect/sequences/oot_superjump.txt`](frame-perfect/sequences/oot_superjump.txt))
 
