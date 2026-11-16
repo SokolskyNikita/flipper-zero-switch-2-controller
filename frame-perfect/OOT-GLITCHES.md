@@ -1,6 +1,6 @@
-# Ocarina of Time (Switch 2) glitches, and which ones Frame Perfect could run
+# Ocarina of Time (Switch 2) glitches
 
-A list of the glitches known in the 2026 Ocarina of Time remake as of 16 November 2026, with a verdict on each: would a scripted, frame-exact controller help?
+A list of the glitches known in the 2026 Ocarina of Time remake as of 16 November 2026. The [last section](#being-considered-for-frame-perfect) says which of them are being considered for Frame Perfect.
 
 - **Sources:** the Ocarina of Time 2026 speedrunning Discord (glitch-hunting channel, the routing forum and the per-glitch video threads), the ZSR wiki, StratDB, YouTube videos and run commentary. Links are in [Sources](#sources).
 - **Dates** are UTC and are a best guess: usually the day the first clip or thread was posted.
@@ -55,20 +55,6 @@ Sorted by discovery date.
 | 15 Nov | Temple of Time door skip | Get past the Door of Time from above | Truman | none | 1.1.1 (tag), 1.0 not stated |
 | 15 Nov | Enemy AI disable | Insta-rolling in a Water Temple room freezes enemies | Kædesakz | none | 1.0 (tag), 1.1.1 not stated |
 
-## What Frame Perfect can and cannot do
-
-Frame Perfect sends buttons and full-tilt stick directions on exact frames. It has no gyro, no partial stick tilt, and it cannot see the screen, so it cannot line Link up. A glitch suits it when the hard part is timing or a long repeated input chain, and the position can be set by hand first.
-
-Best candidates to add, in order:
-
-1. **Actor jump.** A timed jump press after a full-down camera move, which a full-tilt stick can do. Launch height varies between attempts for reasons nobody has pinned down, and identical inputs are the way to find out why.
-2. **Longer and faster jumpslash cancel chains.** The Forest Escape needs about 100 in a row and the Song of Time skip between about 17 and 60, depending on the setup.
-3. **Hookshot storage setup.** The hookshot has to be released on the first explosion frame, which people find by pause buffering. It only helps on version 1.0.
-4. **Bomb T-pose.** Putting the ocarina away during an inhale is a timed input that a sequence makes repeatable.
-5. **Hover Boots bottle hover and hover jump.** A steady rhythm of bottle swings, then an unequip and jump together.
-
-Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.md](../SUPERJUMP.md), `sequences/oot_superjump.txt`).
-
 ## Route and records (16 Nov)
 
 - **Fastest run found:** [2:05:25 by Rick Schmidty](https://www.youtube.com/watch?v=-Wxm7craXQA), 15 November. The time includes a 24-second allowance, because cartridge loads are about 24 seconds slower than digital over a run and the community is still deciding how to treat that.
@@ -94,7 +80,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. It gets child Link into the Shadow Temple, replaces most dungeon climbing, and is part of nearly every other skip here.
 - **Video:** [Jumpslash Cancel Glitch Tutorial by gymnast86](https://www.youtube.com/watch?v=4HSZ6GMQCZk).
-- **Frame Perfect:** yes, and already working for child Link ([demo](https://www.youtube.com/watch?v=hTiaGGzQzuU)). Worth adding: the hammer version for adult Link, the backwards variant, the frame-perfect faster start, and a tighter loop for places with a low ceiling or a void plane, where each cancel has to gain as little height as possible.
 
 ### Actor jump
 
@@ -109,7 +94,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.1.1 by many reports. On 1.0 it appears in setups alongside 1.0-only tricks.
 - **Any% impact:** high. It was the first way into the Shadow Temple early and to the Mirror Shield and Silver Gauntlets. Much of that is now done with jumpslash cancels, but routes still use it where it is quicker, such as the Gerudo Fortress skip.
 - **Video:** [Actor Jumping by Kethaldo](https://www.youtube.com/watch?v=Rop0oeZVk24). A fixed setup: [Bean Jump for Shadow Temple Early by RoboRotembo](https://www.youtube.com/watch?v=1EIvnoPTQ48).
-- **Frame Perfect:** yes. The jump has to follow the put-away within a short window, and some people pause buffer it. The camera move is a full-tilt right stick. Link has to be placed on the actor by hand.
 
 ### Puberty skip
 
@@ -120,7 +104,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. With the Song of Time skip it removes two of the three child dungeons.
 - **Video:** no good dedicated one; see the [2:05:25 run](https://www.youtube.com/watch?v=-Wxm7craXQA).
-- **Frame Perfect:** no. It is a consequence of the route, not an input trick.
 
 ### Save/load respawn manipulation
 
@@ -130,7 +113,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. The Song of Time skip and the Iron Boots skip are both built on it.
 - **Video:** [Ocarina saving our position from out of bounds by Dusty_Carpet](https://www.youtube.com/watch?v=fRGNLxWWfDc).
-- **Frame Perfect:** no. It is menu work and positioning.
 
 ### Bomb T-pose
 
@@ -141,7 +123,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high, as the clip used in the Song of Time skip.
 - **Video:** [Any% Is Now 20 Minutes Faster by ThreeLetterName](https://www.youtube.com/watch?v=4V1lRs6J-Sk), which shows the T-pose and the skip.
-- **Frame Perfect:** partly. The long-note method is easy by hand. A sequence would make the quicker inhale-timed version repeatable.
 
 ### Song of Time skip
 
@@ -151,7 +132,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. The song was needed only for this block, so Dodongo's Cavern and Jabu-Jabu no longer have to be finished. About 20 minutes.
 - **Video:** [Forest Temple SoT skip by ontrigger](https://www.youtube.com/watch?v=wEKZvrajzQE). Tutorial: [ThreeLetterName](https://www.youtube.com/watch?v=4V1lRs6J-Sk).
-- **Frame Perfect:** partly. The hover is a jumpslash cancel chain that a sequence can run. The lineup and the bomb pull are manual.
 
 ### Iron Boots skip (Invalid Respawn)
 
@@ -161,7 +141,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. With the Longshot skip it removes the Ice Cavern and Water Temple. About 20 minutes.
 - **Video:** [Iron Boots Skip from Actor Jump](https://www.youtube.com/watch?v=pyZic3Uyp08). Without Hookshot: [Song of Time Skip (No Iron Boots / Hookshot) by karterfreak](https://www.youtube.com/watch?v=RyWAgiSeS9M).
-- **Frame Perfect:** partly. The shield turns and spin cancels are fixed button inputs, and the climb is a jumpslash cancel chain. Run commentary describes a slow walk into a corner as part of the setup, which would need partial stick tilt that Frame Perfect does not send.
 
 ### Collapse Longshot skip
 
@@ -174,7 +153,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** high. The Longshot's last required use is gone, and with it the Water Temple.
 - **Video:** [Skip Longshot in Tower Collapse by dannyb](https://www.youtube.com/watch?v=-VOZJwH2BUc). Rizz skip: [Taechuk](https://www.youtube.com/watch?v=rEj3BjL5gPk).
-- **Frame Perfect:** no. It is movement along narrow collision and a precise aim that runners do with gyro.
 
 ## Medium impact
 
@@ -186,7 +164,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** medium. It is how humans hit the frame-tight parts of other glitches, at a cost in time.
 - **Video:** none dedicated.
-- **Frame Perfect:** it replaces this. A sequence places the input on the frame directly, with no buffering.
 
 ### Hookshot storage
 
@@ -198,7 +175,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 only. Releasing with the target unloaded crashes the game.
 - **Any% impact:** medium, and only for 1.0 runners.
 - **Video:** [Hookshot Storage Setup by Pizzabite](https://www.youtube.com/watch?v=sgmJNYPChXc).
-- **Frame Perfect:** probably, for the setup. A sequence could place the bombs and release on a counted frame with no pause buffering, if the fuse length is constant. People counting it by hand report 8 to 12 frames for the last flash, so that needs measuring first. The angle against the wall still has to be set by hand.
 
 ### Boss key skips
 
@@ -211,7 +187,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 only. A Fire Temple version using the Yiga Warp exists but needs NG+.
 - **Any% impact:** medium. The Spirit skip is the one that matters, since Spirit is still completed. It goes straight to Twinrova's room, so it also skips the Nabooru fight.
 - **Video:** [Spirit Temple BK skip by minimini352](https://www.youtube.com/watch?v=irhpbegsgSc). Others: [Forest](https://www.youtube.com/watch?v=1ZHPVLBWiP0), [Fire](https://www.youtube.com/watch?v=Uhi7EqcHS4g), [Shadow](https://www.youtube.com/watch?v=QO6Mk7i-o6I).
-- **Frame Perfect:** partly. The storage setup and the jumpslash cancels are scriptable. The out-of-bounds navigation is not.
 
 ## Low impact
 
@@ -223,7 +198,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** not stated.
 - **Any% impact:** low. It is one way across the Fire trial.
 - **Video:** [Hoverboots Jump Glitch by Kalugero](https://www.youtube.com/watch?v=clc_DyfvBCE).
-- **Frame Perfect:** yes. It is a steady rhythm of bottle swings.
 
 ### Hover jump
 
@@ -233,7 +207,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** not stated.
 - **Any% impact:** low. Small skips in the Ice Cavern and trials.
 - **Video:** [Ice Cavern Red Ice Hover Jump](https://www.youtube.com/watch?v=TrLwy1EG1es).
-- **Frame Perfect:** yes. People remap buttons to press unequip and jump together; a sequence presses both on the same frame.
 
 ### Deku Tree B1 skip
 
@@ -242,7 +215,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** low.
 - **Video:** none verified.
-- **Frame Perfect:** partly, as a short jumpslash cancel.
 
 ### Gerudo Fortress skip
 
@@ -251,7 +223,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** not stated.
 - **Any% impact:** low.
 - **Video:** [Actor Jump Gerudo Fortress Skip by Tach](https://www.youtube.com/watch?v=7nm7BUvUANg).
-- **Frame Perfect:** partly, for the jump itself.
 
 ### Cutscene skips
 
@@ -261,7 +232,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Side effect:** the day and night cycle only starts once the Hyrule Field owl cutscene has been watched. Skipping it freezes time at early morning for the whole game, which rules the skip out for 100%.
 - **Any% impact:** low. Seconds each.
 - **Video:** none verified.
-- **Frame Perfect:** partly, as short jumpslash cancels.
 
 ### Fast songs
 
@@ -271,7 +241,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** low.
 - **Video:** [Fast Song Examples by Myth197](https://www.youtube.com/watch?v=Vs0N5NA9Lvo).
-- **Frame Perfect:** yes, and simple. Songs are fixed button strings.
 
 ### Boss quick kills
 
@@ -280,7 +249,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** not stated.
 - **Any% impact:** low.
 - **Video:** [Child Boss Quick-kill Methods by bradyONE](https://www.youtube.com/watch?v=cdgZDQoIeqw).
-- **Frame Perfect:** partly. The damage strings are scriptable, but bosses move and some phases are random.
 
 ### Castle guard shot
 
@@ -289,7 +257,6 @@ Already done: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.m
 - **Works on:** not stated.
 - **Any% impact:** low.
 - **Video:** [Guard Shot Optimization by Jethro TV](https://www.youtube.com/watch?v=MAhhp90xVrM).
-- **Frame Perfect:** no.
 
 ## None so far
 
@@ -303,7 +270,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** none for fresh-file runs, because the escape has to be reached first. It is being treated as an NG+ trick.
 - **Video:** [YigaBomb/Load by Brando](https://www.youtube.com/watch?v=2ZN8M4rvC2Y).
-- **Frame Perfect:** no.
 
 ### Forest Escape
 
@@ -312,7 +278,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Works on:** 1.0 and 1.1.1.
 - **Any% impact:** none yet. It is easier without a sword, and a swordless route loses more time later than it saves. Nothing after the forest needs the Deku Tree, so it would matter if it got faster.
 - **Video:** [Kokiri Forest Escape by karterfreak](https://www.youtube.com/watch?v=hHll6FaJa1s).
-- **Frame Perfect:** yes, and the best showcase for it. The hard part for a person is doing 100 cancels without one mistake.
 
 ### Temple of Time door skip
 
@@ -320,7 +285,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Found by:** Truman, 15 Nov.
 - **Works on:** 1.1.1 (tagged). 1.0 not stated.
 - **Any% impact:** none. The first Master Sword pull only works if the door was opened by the Song of Time at the altar, so getting past the door achieves nothing.
-- **Frame Perfect:** no.
 
 ### Hitstop launches
 
@@ -330,7 +294,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Works on:** not stated.
 - **Any% impact:** none yet. It is hours old and not understood.
 - **Video:** [Hammer Hitstop Actor Jump by RoboRotembo](https://www.youtube.com/watch?v=QbIiTSNh678).
-- **Frame Perfect:** possibly. The hit and the jump are frame-linked, but the enemy has to be in the right place.
 
 ### Geddan boost
 
@@ -338,7 +301,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Found by:** CaspianFS, 11 Nov.
 - **Works on:** not stated.
 - **Video:** [No IJSC shadow entrance by caspian](https://www.youtube.com/watch?v=IZfIzqN-IjU).
-- **Frame Perfect:** no.
 
 ### Ocarina push and dive
 
@@ -346,7 +308,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **What it does:** Link can be pushed while playing the ocarina and passes through void planes in that state. Bombs dropped against a corner before opening the ocarina can push him out of bounds.
 - **Found by:** panchosteve, 10 Nov. Benjamin Datum confirmed it underwater.
 - **Works on:** 1.0 and 1.1.1.
-- **Frame Perfect:** no.
 
 ### Cucco teleport
 
@@ -354,7 +315,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Found by:** Leem, 11 Nov. The well entry is by Benjamin Datum, Joshmesh, Toti Sauce, Piggachew and Leem.
 - **Works on:** not stated.
 - **Video:** [Enter Bottom of the Well as Adult](https://www.youtube.com/watch?v=tDpLbEltLy4).
-- **Frame Perfect:** partly. The pickup timing is precise.
 
 ### Platform momentum storage
 
@@ -362,7 +322,6 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Found by:** ontrigger, 11 Nov.
 - **Works on:** not stated.
 - **Video:** [platform momentum storage by ontrigger](https://www.youtube.com/watch?v=AnZz7z6EUVE).
-- **Frame Perfect:** no.
 
 ### Smaller finds
 
@@ -375,7 +334,7 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **Items underwater** (Türkenheimer and Lucas, 7 Nov).
 - **Fishing rod steal** (DobleC, 11 Nov): unequip the Iron Boots as the fish leaves the water and the rod stays on the item button. Tested on 1.1.1.
 - **Heat invulnerability** (Olra, 12 Nov): no heat timer in Death Mountain Crater until Link touches another spawn point. Tagged 1.1.1.
-- **No Slip Condition** (Splarff, 13 Nov): on ice or in Hover Boots, cancel a roll's start with a jump a few frames later to turn with no speed loss. Frame Perfect could do this, for very little gain.
+- **No Slip Condition** (Splarff, 13 Nov): on ice or in Hover Boots, cancel a roll's start with a jump a few frames later to turn with no speed loss.
 - **Enemy AI disable** (Kædesakz, 15 Nov): insta-rolling in the Water Temple spike room stops enemies acting. Tagged 1.0.
 - **Gold Skulltula respawn** (thread by Ninpalk, 11 Nov): a collected token comes back after reloading the area, as on the N64.
 
@@ -394,6 +353,31 @@ These are real but are not in the fresh-file Any% route, either because they nee
 - **NG+:** a run that depends on something set up in an earlier playthrough.
 - **OoB:** out of bounds.
 - **Void plane:** an invisible surface that respawns Link when he touches it.
+
+## Being considered for Frame Perfect
+
+Frame Perfect sends buttons and full-tilt stick directions on exact frames. It has no gyro, no partial stick tilt, and it cannot see the screen, so it cannot line Link up. A glitch is a candidate when the hard part is timing or a long repeated input chain, and the position can be set by hand first.
+
+Already working: the jumpslash cancel as child Link with a Deku Stick ([SUPERJUMP.md](../SUPERJUMP.md), `sequences/oot_superjump.txt`, [demo](https://www.youtube.com/watch?v=hTiaGGzQzuU)).
+
+Candidates, most useful first:
+
+1. **Actor jump.** The jump has to follow the ocarina put-away within a short window, and some people pause buffer it. The camera move is a full-tilt right stick. Launch height varies between attempts for reasons nobody has pinned down, and identical inputs are the way to find out why.
+2. **More jumpslash cancel variants.** The hammer version for adult Link, the backwards variant, and the faster start, which is reported as possibly frame perfect. Also a tighter loop for places with a low ceiling or a void plane, where each cancel has to gain as little height as possible.
+3. **Long jumpslash cancel chains.** The Forest Escape needs about 100 in a row, and the hard part for a person is not making one mistake. The Song of Time skip needs between about 17 and 60 depending on the setup. Short chains cover the Deku Tree B1 skip and the cutscene skips.
+4. **Hookshot storage setup.** The hookshot has to be released on the first explosion frame, which people find by pause buffering. A sequence could place the bombs and release on a counted frame, if the fuse length is constant. People counting by hand report 8 to 12 frames for the last flash, so that needs measuring first. It only helps on version 1.0.
+5. **Bomb T-pose.** The long-note method is easy by hand. A sequence would make the quicker version, timed to one of Link's inhales, repeatable.
+6. **Hover Boots bottle hover and hover jump.** The hover is a steady rhythm of bottle swings. For the jump, people remap buttons so they can press unequip and jump together; a sequence presses both on the same frame.
+7. **Hitstop launches.** The hit and the jump are frame-linked, so a sequence could help work out the timing. The enemy has to be in the right place, which makes it hard to repeat.
+8. **Fast songs.** Songs are fixed button strings, so this is simple to add. The gain is small.
+
+Not candidates:
+
+- **Iron Boots skip setup.** Its shield turns and spin cancels are fixed button inputs, but run commentary describes a slow walk into a corner, which needs partial stick tilt.
+- **Collapse Longshot skip.** It is movement along narrow collision and a precise aim that runners do with gyro.
+- **Boss key skips.** The storage setup and the hovers are covered above. The out-of-bounds navigation between them is not scriptable without seeing the screen.
+- **Boss quick kills.** The damage strings are scriptable, but bosses move and some phases are random.
+- **Everything else** is routing, menu work or positioning: the puberty skip, save/load respawns, the Yiga Warp and the rest.
 
 ## Sources
 
