@@ -54,7 +54,7 @@ python3 frame-perfect/tools/fp_remote.py superjump --loops 32 --claim
 | Path | What |
 | --- | --- |
 | `SUPERJUMP.md`, `SUPERJUMP-RUNBOOK.md` | the super jump: exact inputs, and how to run it |
-| `frame-perfect/` | the Flipper app (C) and sequences |
+| `frame-perfect/` | the Flipper app (C) and sequences. The list of the remake's known glitches moved to [OOT-GLITCHES.md in oot26-on-mac](https://github.com/SokolskyNikita/oot26-on-mac/blob/main/OOT-GLITCHES.md) |
 | `frame-perfect/tools/` | Mac tools: `fp_remote.py` (server + commands), `ble_rpc.py` (upload builds over Bluetooth), `attempt.py`, `phase_sweep.py`, `check_timing.py`, `host_test.py` |
 | `docs/` | how macOS picks Bluetooth LE connection intervals (reverse-engineered from `bluetoothd`) |
 | `private/` | git-ignored: local settings, lab notes, raw logs |
